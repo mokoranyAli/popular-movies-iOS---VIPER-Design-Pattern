@@ -8,12 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MovieVC : UIViewController {
 
+    @IBOutlet weak var moviesTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+           setupTabelView()
     }
+    
+    
+
 
 
 }
