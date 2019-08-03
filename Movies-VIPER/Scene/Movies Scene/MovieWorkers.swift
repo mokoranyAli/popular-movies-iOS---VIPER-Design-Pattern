@@ -7,3 +7,23 @@
 //
 
 import Foundation
+
+class MovieWorker {
+    
+    private init (){}
+  public static let shared = MovieWorker()
+    
+      private let networkLayer = NetworkLayer.shared
+    
+    func getMovies ( completionHandler:@escaping ([Movie]?) -> Void){
+         let url = Constants.sharedObject.getMovieUrl()
+    
+        networkLayer.getMoviesList(moviesUrl: url, completionHandler: completionHandler)
+    
+    }
+    
+    
+    
+    
+
+}

@@ -11,10 +11,14 @@ import UIKit
 class MovieVC : UIViewController {
 
     @IBOutlet weak var moviesTableView: UITableView!
+    var presenter: MoviePresenterProtocol! 
     
     override func viewDidLoad() {
         super.viewDidLoad()
            setupTabelView()
+        
+        presenter.viewDidLoad()
+        
     }
     
     

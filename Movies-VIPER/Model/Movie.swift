@@ -7,3 +7,13 @@
 //
 
 import Foundation
+class Movie{
+    var MovieID : Int!
+    var title : String = ""
+    var image : String = ""
+    var rating : Double = 0.0
+    var popularity : Double = 0.0
+    
+    var releaseYear : String = ""
+    var genre : [String] = []
+}

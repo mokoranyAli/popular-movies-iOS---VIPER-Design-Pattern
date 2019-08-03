@@ -6,4 +6,27 @@
 //  Copyright © 2019 Mohamed Korany Ali. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import SVProgressHUD
+
+extension MovieVC : MovieViewProtocol
+    
+{
+    
+    
+    func showLoadingIndicator() {
+        SVProgressHUD.show()
+    }
+    
+    func hideLoadingIndicator() {
+        SVProgressHUD.dismiss()
+    }
+    
+    func reloadData() {
+        moviesTableView.reloadData()
+    }
+    
+    
+    
+}
+

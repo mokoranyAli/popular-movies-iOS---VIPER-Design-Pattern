@@ -6,4 +6,22 @@
 //  Copyright © 2019 Mohamed Korany Ali. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class MovieRouter : MovieRouterProtocol{
+    
+    
+    weak var viewController: UIViewController?
+    
+    static func createModule() -> UIViewController {
+        let view = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(MovieVC.self)") as! MovieVC
+        let interactor = MovieInteractor()
+        let router = MovieRouter()
+        let presenter = MoviePresenter(view: view, interactor: interactor, router: router)
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        return view
+    }
+    
+}
