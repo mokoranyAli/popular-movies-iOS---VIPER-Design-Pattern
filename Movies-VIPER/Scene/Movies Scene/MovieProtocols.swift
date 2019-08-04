@@ -38,7 +38,7 @@ protocol MovieInteractorOutputProtocol: class {
 
 
 protocol MovieRouterProtocol: class {
-    
+     func navigateToUserDetailsScreen(from view: MovieViewProtocol?, movie: Movie)
 }
 
 

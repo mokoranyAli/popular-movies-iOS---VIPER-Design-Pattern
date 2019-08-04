@@ -57,6 +57,8 @@ class  MoviePresenter : MoviePresenterProtocol , MovieInteractorOutputProtocol{
     
     func didSelectedRow(indexpath: IndexPath) {
         let selectedMovie:Movie = moviesArray[indexpath.row]
+        router.navigateToUserDetailsScreen(from: view, movie: selectedMovie)
+        print(router)
         print(selectedMovie.title)
     }
     

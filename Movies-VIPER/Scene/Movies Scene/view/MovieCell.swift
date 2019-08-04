@@ -7,18 +7,34 @@
 //
 
 import UIKit
+import SDWebImage
 
-class MovieCell: UITableViewCell {
+class MovieCell: UITableViewCell,MovieCellView {
+    @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var movieRateLabel: UILabel!
+    @IBOutlet weak var movieImageView: UIImageView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        selectionStyle = .none
+        setupImageView()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    
+    func configureCell(movieDTO: MovieDTO) {
+        movieNameLabel.text = movieDTO.name
+        movieRateLabel.text = String(movieDTO.rate)
+        movieImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        movieImageView.sd_setImage(with: URL(string: movieDTO.imageURL), completed: nil)
     }
+    private func setupImageView() {
+        movieImageView.layer.cornerRadius = movieImageView.frame.height / 2
+        movieImageView.layer.masksToBounds = true
+        movieImageView.layer.borderColor = UIColor.black.cgColor
+        movieImageView.layer.borderWidth = 2
+    }
+
     
 }
