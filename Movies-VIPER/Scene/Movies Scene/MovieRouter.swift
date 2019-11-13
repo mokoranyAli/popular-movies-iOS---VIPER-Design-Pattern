@@ -26,9 +26,12 @@ class MovieRouter : MovieRouterProtocol{
     
     func navigateToUserDetailsScreen(from view: MovieViewProtocol?, movie: Movie) {
         let movieDetailsVC = MovieDetailsRouter.createMovieDetailsViewController(movie: movie) as! MovieDetailsVC
-        print("hhhhhhshshshshshshhsshs")
         if let viewController = view as? UIViewController {
-            viewController.navigationController?.pushViewController(movieDetailsVC, animated: true)
+            //viewController.navigationController?.isNavigationBarHidden = false
+            
+            viewController.present(movieDetailsVC, animated: true, completion: nil)
+
+           // viewController.navigationController?.pushViewController(movieDetailsVC, animated: true)
         }
     }
     

@@ -161,13 +161,13 @@
 		2032878F22F2C94000E082EE /* Movies Scene */ = {
 			isa = PBXGroup;
 			children = (
+				203F44D9237C0D0100CE8BA0 /* Workers */,
 				2032879322F2C9C200E082EE /* VC + extension */,
 				2032879222F2C99D00E082EE /* view */,
 				2032879422F2CA0600E082EE /* MoviePresenter.swift */,
 				2032879622F2CA3500E082EE /* MovieRouter.swift */,
 				2032879822F2CA7B00E082EE /* MovieInteractor.swift */,
 				2032879A22F2CBD700E082EE /* MovieProtocols.swift */,
-				2029FE9122F417970005E609 /* MovieWorkers.swift */,
 			);
 			path = "Movies Scene";
 			sourceTree = "<group>";
@@ -208,6 +208,14 @@
 				2032879C22F2CC9200E082EE /* MovieVC + delegate.swift */,
 			);
 			path = "VC + extension";
+			sourceTree = "<group>";
+		};
+		203F44D9237C0D0100CE8BA0 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				2029FE9122F417970005E609 /* MovieWorkers.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		20A0EAFC22F6BDF200241FDB /* MovieDetils Scene */ = {

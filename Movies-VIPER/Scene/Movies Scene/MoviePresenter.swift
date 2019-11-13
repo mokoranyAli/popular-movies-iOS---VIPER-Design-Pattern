@@ -16,12 +16,6 @@ class  MoviePresenter : MoviePresenterProtocol , MovieInteractorOutputProtocol{
     {
         return moviesArray.count
     }
-  
-    
-    
-    
-   
-    
    weak var view: MovieViewProtocol?
     private let interactor: MovieInteractorInputProtocol
     private let router: MovieRouterProtocol
@@ -57,9 +51,13 @@ class  MoviePresenter : MoviePresenterProtocol , MovieInteractorOutputProtocol{
     
     func didSelectedRow(indexpath: IndexPath) {
         let selectedMovie:Movie = moviesArray[indexpath.row]
+        
+        print("delegation work")
+        
+        
         router.navigateToUserDetailsScreen(from: view, movie: selectedMovie)
-        print(router)
-        print(selectedMovie.title)
+//        print(router)
+//        print(selectedMovie.title)
     }
     
     

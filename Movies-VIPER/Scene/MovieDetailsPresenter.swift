@@ -15,13 +15,14 @@ class MovieDetailsPresenter:MovieDetailsPresenterProtocol {
         if let selectedMovie = movie{
             view?.showMovieDetails(movie: selectedMovie)
         }
+        view?.hideLoading()
         
     }
     
   weak var view: MovieDetailsViewProtocol?
     private var movie:Movie?
     
-    init(view:MovieDetailsViewProtocol , movie:Movie) {
+    init(view:MovieDetailsViewProtocol ,router:MovieDetailsRouter, movie:Movie) {
         self.movie = movie
         self.view = view
     }

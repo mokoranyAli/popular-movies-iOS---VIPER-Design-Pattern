@@ -35,7 +35,6 @@ class NetworkLayer{
                         movie.rating = json["results"][i]["vote_average"].double!
                         movie.releaseYear = json["results"][i]["release_date"].string!
                         
-                        print(movie.image)
                         listMovies.append(movie)
                     }
                     
